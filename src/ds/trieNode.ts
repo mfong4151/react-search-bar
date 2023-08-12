@@ -8,4 +8,5 @@ export class TrieNode{
         this.children = {};
         this.end = false;
     }
+    
 }
