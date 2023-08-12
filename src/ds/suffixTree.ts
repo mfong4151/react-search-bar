@@ -1,8 +1,9 @@
 import { StringTrees } from "./StringTrees";
 
 export class SuffixTree extends StringTrees{
-    constructor(words:string[] = []){
-        super(words)
+    constructor(){
+        super()
+
     }
 
     build(){
@@ -15,6 +16,10 @@ export class SuffixTree extends StringTrees{
 
     search(){
 
+    }
+
+    complete(){
+        
     }
 
 

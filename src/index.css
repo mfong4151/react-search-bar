@@ -1,3 +1,8 @@
+:root{
+  --text-color-blk: rgb(0,0,0);
+
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -28,7 +33,7 @@ code {
 
 #search-form{
   min-width:80vw;
-  min-height:100px;
+  min-height:30px;
 }
 
 #search-form > input{
@@ -40,8 +45,23 @@ code {
 
 
 #search-form > button{
-  min-width:12%;
+  min-width:13%;
   font-size:16px;
   font-weight:600;
   padding:8px;
+}
+
+#search-res{
+  width: inherit;
+}
+
+.modal-overlay{
+  position: absolute;
+  width: inherit;
+}
+
+
+.drop-down-itm{
+  color: var(--text-color-blk);
+  font-size:10px;
 }

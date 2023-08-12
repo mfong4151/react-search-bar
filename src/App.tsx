@@ -6,13 +6,13 @@ import { createTrieWords } from './utils/trieWords';
 
 const App:FC =() => {
 
-//For trie demonstration
+  //For trie demonstration
+  const trieWords: string[] = createTrieWords();
   const defaultTrie: Trie = new Trie();
   const trie = useRef<Trie | SuffixTree>(defaultTrie);
-  const trieWords: string[] = createTrieWords();
 
   useLayoutEffect(()=>{
-    defaultTrie.build(createTrieWords())
+    defaultTrie.build(trieWords)
 
   }, [])
 

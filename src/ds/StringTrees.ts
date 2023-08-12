@@ -5,9 +5,9 @@ import { TrieNode } from "./trieNode";
 export class StringTrees{
     root: TrieNode
     words: string[]
-    constructor(words:string[] = []){
+    constructor(){
         this.root = new TrieNode();
-        this.words = words;
+        this.words = [];
     }
 
 }

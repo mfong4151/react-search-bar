@@ -3,11 +3,11 @@ type children = {[key:string]: TrieNode}
 export class TrieNode{
     children: children
     end: boolean
-    words: number[]
+    words: Set<number>
     constructor(){
         this.children = {};
         this.end = false;
-        this.words = [];
+        this.words = new Set<number>();
     }
     
 }

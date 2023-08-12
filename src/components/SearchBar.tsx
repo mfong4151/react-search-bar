@@ -23,7 +23,14 @@ const SearchBar: FC<Props> = ({trie}) => {
         <input type="text" value={searchVal} onChange={e => setSearchVal( e.target.value)}/>
         <button onClick={handleOnClick}>Search</button>
       </form>
-      {searchVal && <DropDownModal />}
+      {searchVal && 
+        <DropDownModal 
+          trie={trie} 
+          searchVal={searchVal} 
+          setSearchVal={setSearchVal}
+          barRef={searchBarRef}  
+        />
+      }
   </div>
   )
 }
