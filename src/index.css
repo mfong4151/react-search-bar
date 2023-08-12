@@ -11,3 +11,37 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+.udc{
+  display: flex;
+}
+
+.udc{
+  justify-content: center;
+  align-items: center;
+}
+
+#App{
+  height:100vh;
+}
+
+#search-form{
+  min-width:80vw;
+  min-height:100px;
+}
+
+#search-form > input{
+  min-width:85%;
+  min-height:100%;
+  
+  padding:10px
+}
+
+
+#search-form > button{
+  min-width:12%;
+  font-size:16px;
+  font-weight:600;
+  padding:8px;
+}
