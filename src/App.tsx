@@ -9,30 +9,27 @@ type mapChoices = {[type:string]: any}
 const App:FC =() => {
   const [chosenTrie, setChosenTrie] = useState<string>('')
 
-  const MAP_CHOICES: mapChoices = {
-                        'trie': Trie,
-                         'suffix': SuffixTree
-                        }  
-
-  const handleOnClick = (e: any) => {
-    e.preventDefault()
-    e.stopPropagation()
-    const choice:string = e.target.id;
-    const trieStructure: Trie | SuffixTree = MAP_CHOICES[choice];
-    trie.current = trieStructure
-    
-  }
-
-  //For trie demonstration
+//For trie demonstration
   const defaultTrie: Trie = new Trie();
   const trie = useRef<Trie | SuffixTree>(defaultTrie);
-  const trieWords = useRef<string[]>(createTrieWords())
+  const trieWords: string[] = createTrieWords();
 
   useLayoutEffect(()=>{
     defaultTrie.build(createTrieWords())
 
   }, [])
 
+  const handleOnClick = (e: any) => {
+    e.preventDefault()
+    e.stopPropagation()
+    const choice:string = e.target.id;
+    if (choice === 'trie') trie.current = new Trie();
+    else trie.current = new SuffixTree();
+    
+    trie.current.build(trieWords)
+  }
+
+  
   return (
     <div id="App" className="udc">
         <div>
