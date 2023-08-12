@@ -38,7 +38,7 @@ export class Trie{
         return true;
     }
 
-    buildTrie(words: string){
+    build(words: string[]){
 
         for(const word of words){
             this.insert(word)
