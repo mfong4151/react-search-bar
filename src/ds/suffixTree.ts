@@ -1,9 +1,8 @@
-import { TrieNode } from "./trieNode";
+import { StringTrees } from "./StringTrees";
 
-export class SuffixTree{
-    root: TrieNode
-    constructor(){
-        this.root = new TrieNode();
+export class SuffixTree extends StringTrees{
+    constructor(words:string[] = []){
+        super(words)
     }
 
     build(){

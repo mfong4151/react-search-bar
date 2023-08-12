@@ -1,17 +1,18 @@
+import { StringTrees } from "./StringTrees";
 import { TrieNode } from "./trieNode";
 
-export class Trie{
-    root: TrieNode
-    constructor(){
-        this.root = new TrieNode();
+export class Trie extends StringTrees{
+    constructor(words:string[] = []){
+        super(words)
     }
 
-    insert(word: string){
+    insert(word: string, i:number){
         let curr: TrieNode = this.root;
         
         for(const c of word){
             if(!curr.children[c]) curr.children[c] = new TrieNode(); 
             curr = curr.children[c];
+            curr.words.push(i)
         }
         curr.end = true;
         return
@@ -40,10 +41,11 @@ export class Trie{
 
     build(words: string[]){
 
-        for(const word of words){
-            this.insert(word)
-        }
-
+        for(const[idx, word] of words.entries()) this.insert(word, idx)
         return
+    }
+    //Used to return the associated words, given that we have a word list alreaady
+    complete(word: string){
+
     }
 }

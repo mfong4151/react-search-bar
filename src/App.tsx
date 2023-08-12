@@ -1,13 +1,10 @@
-import React, { FC, useLayoutEffect, useRef, useState } from 'react';
+import React, { FC, useLayoutEffect, useRef } from 'react';
 import SearchBar from './components/SearchBar';
 import "./index.css"
 import { SuffixTree, Trie } from './ds';
 import { createTrieWords } from './utils/trieWords';
 
-type mapChoices = {[type:string]: any}
-
 const App:FC =() => {
-  const [chosenTrie, setChosenTrie] = useState<string>('')
 
 //For trie demonstration
   const defaultTrie: Trie = new Trie();
@@ -36,7 +33,7 @@ const App:FC =() => {
           <button id="trie" onClick={handleOnClick}>Trie</button>
           <button id="suffix" onClick={handleOnClick}>Suffix Tree</button>
         </div>
-        <SearchBar/>
+        <SearchBar trie={trie.current}/>
     </div>
   );
 }
