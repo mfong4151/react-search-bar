@@ -51,17 +51,30 @@ code {
   padding:8px;
 }
 
-#search-res{
-  width: inherit;
-}
-
 .modal-overlay{
   position: absolute;
-  width: inherit;
+  min-height: 100%;
+}
+
+
+#search-res,
+#search-res > *
+{
+  min-width: 75vw;
+}
+
+#search-res{
+  border: .1rem solid var(--text-color-blk);
 }
 
 
 .drop-down-itm{
   color: var(--text-color-blk);
-  font-size:10px;
+  font-size:30px;
+  width:100%;
+}
+
+.drop-down-itm:hover{
+  background-color: var(--text-color-blk);
+  color: white;
 }
